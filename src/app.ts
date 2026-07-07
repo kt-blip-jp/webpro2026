@@ -1,8 +1,12 @@
 import "./config/database";
 import express from "express";
 import taskRoutes from "./routes/taskRoutes";
+import cors from "cors";
 
 const app = express();
+
+app.use(cors());
+app.use(express.json());
 
 // RenderではPORT環境変数が設定される。
 // ローカルでは3000番ポートを使う。
